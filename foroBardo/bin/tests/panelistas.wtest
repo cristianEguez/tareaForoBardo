@@ -1,0 +1,44 @@
+import panelistas.*
+
+describe "panelistas " {
+
+	test "a horacioPagani se le establece 20 de nivelDeEnojo, esta caliente? Falso" {
+		horacioPagani.nivelDeEnojo(20)
+		assert.notThat(horacioPagani.estaCaliente())
+	}
+
+	test "a horacioPagani se le establece 21 de nivelDeEnojo, y se le hace tomar agua, entonces NO esta caliente" {
+		horacioPagani.nivelDeEnojo(20)
+		horacioPagani.tomarAgua()
+		assert.notThat(horacioPagani.estaCaliente())
+	}
+	
+	test "a horacioPagani se le establece 23 de nivelDeEnojo, y se le hace tomar agua, entonces esta caliente" {
+		horacioPagani.nivelDeEnojo(23)
+		horacioPagani.tomarAgua()
+		assert.that(horacioPagani.estaCaliente())
+	}
+	
+	test "a horacioPagani se le establece -3 de nivelDeEnojo, y se le hace tomar agua, entonces NO esta caliente" {
+		horacioPagani.nivelDeEnojo(-3)
+		horacioPagani.tomarAgua()
+		assert.notThat(horacioPagani.estaCaliente())
+	}
+	
+	test "a horacioPagani se le establece 10 de nivelDeEnojo, y se le hace elevar la voz, entonces NO esta caliente" {
+		horacioPagani.nivelDeEnojo(10)
+		horacioPagani.elevarVoz()
+		assert.notThat(horacioPagani.estaCaliente())
+	}
+
+	test "a horacioPagani se le establece 11 de nivelDeEnojo, y se le hace elevar la voz, entonces esta caliente" {
+		horacioPagani.nivelDeEnojo(11)
+		horacioPagani.elevarVoz()
+		assert.that(horacioPagani.estaCaliente())
+	}
+	
+	test "lizzyTagliani inicia de mal humor ? Falso" {
+		
+		assert.notThat(lizzyTagliani.estaDeMalhumor())
+	}
+}

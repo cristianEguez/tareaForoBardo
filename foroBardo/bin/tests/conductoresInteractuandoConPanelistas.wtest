@@ -1,0 +1,83 @@
+import conductores.*
+import panelistas.*
+
+describe " Conductores interactuando con panelistas " {
+	
+	test "fantino hace opinar de deportes a horacioPagani (se establece 
+con 10 de nivel de enojo ), entonces NO esta caliente" {
+	
+	horacioPagani.nivelDeEnojo(10)
+	fantino.hacerOpinarDeDeportesA(horacioPagani)
+	assert.notThat(horacioPagani.estaCaliente())
+
+	}
+	
+	test "fantino hace opinar de deportes a horacioPagani (se establece 
+con 14 de nivel de enojo ), entonces esta caliente" {
+	
+	horacioPagani.nivelDeEnojo(14)
+	fantino.hacerOpinarDeDeportesA(horacioPagani)
+	assert.notThat(horacioPagani.estaCaliente())
+
+	}
+		
+	test "fantino hace opinar de deportes a horacioPagani (se establece 
+con 15 de nivel de enojo ), entonces esta caliente" {
+	
+	horacioPagani.nivelDeEnojo(15)
+	fantino.hacerOpinarDeDeportesA(horacioPagani)
+	assert.that(horacioPagani.estaCaliente())
+
+	}
+	
+	test "fantino hace opinar de deportes a horacioPagani (se establece 
+con 16 de nivel de enojo ), entonces esta caliente" {
+	
+	horacioPagani.nivelDeEnojo(16)
+	fantino.hacerOpinarDeDeportesA(horacioPagani)
+	assert.that(horacioPagani.estaCaliente())
+
+	}
+	
+	test "fantino hace opinar de deportes a lizzyTagliani, entonces no esta de mal humor" {
+	
+	fantino.hacerOpinarDeDeportesA(lizzyTagliani)
+	assert.notThat(lizzyTagliani.estaDeMalhumor())
+
+	}
+	
+	test " polino hace opinar de chimentos a horacioPagani (se establece 
+con 22 de nivel de enojo ), entonces No esta caliente " {
+	
+	horacioPagani.nivelDeEnojo(22)
+	polino.hacerOpinarDeChimentosA(horacioPagani)
+	assert.notThat(horacioPagani.estaCaliente())
+	
+	}
+	
+	test " polino hace opinar de chimentos a horacioPagani (se establece 
+con 23 de nivel de enojo ), entonces esta caliente " {
+	
+	horacioPagani.nivelDeEnojo(23)
+	polino.hacerOpinarDeChimentosA(horacioPagani)
+	assert.that(horacioPagani.estaCaliente())
+	
+	}
+	
+	test " polino hace opinar de chimentos a horacioPagani (se establece 
+con 20 de nivel de enojo ), entonces NO esta caliente " {
+	
+	horacioPagani.nivelDeEnojo(20)
+	polino.hacerOpinarDeChimentosA(horacioPagani)
+	assert.notThat(horacioPagani.estaCaliente())
+	
+	}
+	
+	test " polino hace opinar de chimentos a lizzyTagliani, entonces NO esta de mal humor " {
+	
+	polino.hacerOpinarDeChimentosA(lizzyTagliani)
+	assert.notThat(lizzyTagliani.estaDeMalhumor())
+	
+	}
+	
+}
